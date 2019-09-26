@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	pb "github.com/Punam-Gaikwad/microservices/consignment-service/proto/consignment"
+	pb "github.com/Punam-Gaikwad/consignment-service/proto/consignment"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

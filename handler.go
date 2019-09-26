@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	pb "github.com/Punam-Gaikwad/microservices/consignment-service/proto/consignment"
-	vesselProto "github.com/Punam-Gaikwad/microservices/vessel-service/proto/vessel"
+	pb "github.com/Punam-Gaikwad/consignment-service/proto/consignment"
+	vesselProto "github.com/Punam-Gaikwad/vessel-service/proto/vessel"
 	"golang.org/x/net/context"
 )
 
