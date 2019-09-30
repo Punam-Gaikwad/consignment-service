@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"os"
 
 	// Import the generated protobuf code
 	pb "github.com/Punam-Gaikwad/consignment-service/proto/consignment"
@@ -16,9 +15,9 @@ import (
 )
 
 const (
-	address     = "localhost:50052"
+	address     = "vessel-service:50052"
 	port        = ":50051"
-	defaultHost = "mongodb://localhost:27017"
+	defaultHost = "mongodb://datastore:27017/?ssl=false"
 )
 
 func main() {
@@ -27,14 +26,15 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err, port)
 	}
+
 	server := grpc.NewServer()
 	fmt.Println("Connected to grpc server")
 
-	uri := os.Getenv("DB_HOST")
-	if uri == "" {
-		uri = defaultHost
-	}
-	fmt.Println("ur: ", defaultHost)
+	//uri := os.Getenv("DB_HOST")
+	//if uri == "" {
+	uri := defaultHost
+	//	}
+	fmt.Println("uri: ", defaultHost)
 	client, err := CreateClient(uri)
 	if err != nil {
 		log.Panic(err)
